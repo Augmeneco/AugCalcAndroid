@@ -1,0 +1,4 @@
+class SingleToken
+!!!129922.java!!!	with(inout a : MathAST) : SingleToken
+        this.a = a;
+        return this;

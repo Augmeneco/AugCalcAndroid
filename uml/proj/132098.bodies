@@ -1,0 +1,4 @@
+class Variable
+!!!130178.java!!!	with(in name : String) : Variable
+        this.name = name;
+        return this;

@@ -1,0 +1,4 @@
+class Constant
+!!!130306.java!!!	with(in value : double) : Constant
+        this.value = value;
+        return this;

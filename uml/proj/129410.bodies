@@ -1,0 +1,5 @@
+class DoubleToken
+!!!130050.java!!!	with(inout a : MathAST, inout b : MathAST) : DoubleToken
+        this.a = a;
+        this.b = b;
+        return this;

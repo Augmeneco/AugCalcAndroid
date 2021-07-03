@@ -1,0 +1,6 @@
+class Differentiate
+!!!130434.java!!!	with(inout f : MathAST, in dx : String) : Differentiate
+        Differentiate o = new Differentiate();
+        o.f = f;
+        o.dx = dx;
+        return o;

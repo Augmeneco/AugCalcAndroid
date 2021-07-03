@@ -1,0 +1,1811 @@
+format 224
+"augcalcandroid" // augcalcandroid
+  revision 1
+  modified_by 2 "Lanode"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  objectcompositediagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  java_dir "D:\\Development\\AugCalcAndroid\\app\\src\\main\\java\\tk\\augmeneco\\augcalcandroid/"
+  java_package "tk.augmeneco.augcalcandroid"
+  classview 128002 "augcalcandroid"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    class 128002 "Calculator"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 128002 "calculate"
+	class_operation package explicit_return_type "double"
+	nparams 1
+	  param inout name "ast" type class_ref 128130 // MathAST
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 128130 "calculate"
+	class_operation package explicit_return_type "double"
+	nparams 2
+	  param inout name "ast" type class_ref 128130 // MathAST
+	  param inout name "args" explicit_type "Map<String, Double>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 128130 "MathAST"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 128258 "KeypadCollectionAdapter"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 128002 // <generalisation>
+	relation 128002 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 128002 // <generalisation>
+	  b parent class_ref 128386 // FragmentStateAdapter
+      end
+
+      operation 128258 "KeypadCollectionAdapter"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "fragment" explicit_type "Fragment"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 128386 "createFragment"
+	public explicit_return_type "Fragment"
+	nparams 1
+	  param in name "position" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@NonNull
+@Override
+"
+	
+	
+	
+      end
+
+      operation 128514 "getItemCount"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+      end
+    end
+
+    class 128514 "KeypadCollectionFragment"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 128130 // <generalisation>
+	relation 128130 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 128130 // <generalisation>
+	  b parent class_ref 128642 // Fragment
+      end
+
+      classrelation 128258 // demoCollectionAdapter (<unidirectional association>)
+	relation 128258 --->
+	  a role_name "demoCollectionAdapter" package
+	    comment " When requested, this adapter returns a DemoObjectFragment,
+ representing an object in the collection.
+"
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 128258 // demoCollectionAdapter (<unidirectional association>)
+	  b parent class_ref 128258 // KeypadCollectionAdapter
+      end
+
+      attribute 128002 "viewPager"
+	package explicit_type "ViewPager2"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 128642 "onCreateView"
+	public explicit_return_type "View"
+	nparams 3
+	  param inout name "inflater" explicit_type "LayoutInflater"
+	  param inout name "container" explicit_type "ViewGroup"
+	  param inout name "savedInstanceState" explicit_type "Bundle"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}@NonNull ${t0} ${p0}, @Nullable ${t1} ${p1}, @Nullable ${t2} ${p2}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Nullable
+@Override
+"
+	
+	
+	
+      end
+
+      operation 128770 "onViewCreated"
+	public explicit_return_type "void"
+	nparams 2
+	  param inout name "view" explicit_type "View"
+	  param inout name "savedInstanceState" explicit_type "Bundle"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}@NonNull ${t0} ${p0}, @Nullable ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+      end
+    end
+
+    class 128770 "KeypadFragment"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment " Instances of this class are fragments representing a single
+ object in our collection."
+      classrelation 128386 // <generalisation>
+	relation 128386 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 128386 // <generalisation>
+	  b parent class_ref 128642 // Fragment
+      end
+
+      attribute 128130 "ARG_POSITION"
+	class_attribute const_attribute public explicit_type "String"
+	init_value " \"position\""
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 128258 "fragmentNumber"
+	class_attribute const_attribute public explicit_type "int"
+	init_value " 2"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 128898 "onCreateView"
+	public explicit_return_type "View"
+	nparams 3
+	  param inout name "inflater" explicit_type "LayoutInflater"
+	  param inout name "container" explicit_type "ViewGroup"
+	  param inout name "savedInstanceState" explicit_type "Bundle"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}@NonNull ${t0} ${p0}, @Nullable ${t1} ${p1}, @Nullable ${t2} ${p2}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Nullable
+@Override
+"
+	
+	
+	
+      end
+
+      operation 129026 "onViewCreated"
+	public explicit_return_type "void"
+	nparams 2
+	  param inout name "view" explicit_type "View"
+	  param inout name "savedInstanceState" explicit_type "Bundle"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}@NonNull ${t0} ${p0}, @Nullable ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+      end
+    end
+
+    class 128898 "MainActivity"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 128514 // <generalisation>
+	relation 128514 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 128514 // <generalisation>
+	  b parent class_ref 129026 // AppCompatActivity
+      end
+
+      attribute 128386 "fastRemovingPattern"
+	package explicit_type "Pattern"
+	init_value " null"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 129154 "onCreate"
+	protected explicit_return_type "void"
+	nparams 1
+	  param inout name "savedInstanceState" explicit_type "Bundle"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+      end
+
+      operation 129282 "onEnterButtonClick"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "view" explicit_type "View"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 129410 "onCalcButtonClick"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "view" explicit_type "View"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 129538 "onClearButtonClick"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "view" explicit_type "View"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 129666 "onRemoveButtonClick"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "view" explicit_type "View"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 129794 "scrollToBottom"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 129154 "LeafToken"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 128642 // <generalisation>
+	relation 128642 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 128642 // <generalisation>
+	  b parent class_ref 128130 // MathAST
+      end
+    end
+
+    class 129282 "SingleToken"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 128770 // <generalisation>
+	relation 128770 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 128770 // <generalisation>
+	  b parent class_ref 128130 // MathAST
+      end
+
+      classrelation 128898 // a (<unidirectional association>)
+	relation 128898 --->
+	  a role_name "a" package
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 128898 // a (<unidirectional association>)
+	  b parent class_ref 128130 // MathAST
+      end
+
+      operation 129922 "with"
+	package return_type class_ref 129282 // SingleToken
+	nparams 1
+	  param inout name "a" type class_ref 128130 // MathAST
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 129410 "DoubleToken"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 129026 // <generalisation>
+	relation 129026 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 129026 // <generalisation>
+	  b parent class_ref 128130 // MathAST
+      end
+
+      classrelation 129154 // a (<unidirectional association>)
+	relation 129154 --->
+	  a role_name "a" package
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 129154 // a (<unidirectional association>)
+	  b parent class_ref 128130 // MathAST
+      end
+
+      classrelation 129282 // b (<unidirectional association>)
+	relation 129282 --->
+	  a role_name "b" package
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 129282 // b (<unidirectional association>)
+	  b parent class_ref 128130 // MathAST
+      end
+
+      operation 130050 "with"
+	package return_type class_ref 129410 // DoubleToken
+	nparams 2
+	  param inout name "a" type class_ref 128130 // MathAST
+	  param inout name "b" type class_ref 128130 // MathAST
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 129538 "Pi"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 129410 // <generalisation>
+	relation 129410 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 129410 // <generalisation>
+	  b parent class_ref 129154 // LeafToken
+      end
+    end
+
+    class 129666 "E"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 129538 // <generalisation>
+	relation 129538 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 129538 // <generalisation>
+	  b parent class_ref 129154 // LeafToken
+      end
+    end
+
+    class 129794 "Sin"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 129666 // <generalisation>
+	relation 129666 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 129666 // <generalisation>
+	  b parent class_ref 129282 // SingleToken
+      end
+    end
+
+    class 129922 "Cos"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 129794 // <generalisation>
+	relation 129794 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 129794 // <generalisation>
+	  b parent class_ref 129282 // SingleToken
+      end
+    end
+
+    class 130050 "Tan"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 129922 // <generalisation>
+	relation 129922 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 129922 // <generalisation>
+	  b parent class_ref 129282 // SingleToken
+      end
+    end
+
+    class 130178 "Ctg"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 130050 // <generalisation>
+	relation 130050 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 130050 // <generalisation>
+	  b parent class_ref 129282 // SingleToken
+      end
+    end
+
+    class 130306 "Lg"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 130178 // <generalisation>
+	relation 130178 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 130178 // <generalisation>
+	  b parent class_ref 129282 // SingleToken
+      end
+    end
+
+    class 130434 "Ln"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 130306 // <generalisation>
+	relation 130306 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 130306 // <generalisation>
+	  b parent class_ref 129282 // SingleToken
+      end
+    end
+
+    class 130562 "Abs"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 130434 // <generalisation>
+	relation 130434 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 130434 // <generalisation>
+	  b parent class_ref 129282 // SingleToken
+      end
+    end
+
+    class 130690 "Usub"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 130562 // <generalisation>
+	relation 130562 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 130562 // <generalisation>
+	  b parent class_ref 129282 // SingleToken
+      end
+    end
+
+    class 130818 "Asin"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 130690 // <generalisation>
+	relation 130690 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 130690 // <generalisation>
+	  b parent class_ref 129282 // SingleToken
+      end
+    end
+
+    class 130946 "Acos"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 130818 // <generalisation>
+	relation 130818 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 130818 // <generalisation>
+	  b parent class_ref 129282 // SingleToken
+      end
+    end
+
+    class 131074 "Atg"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 130946 // <generalisation>
+	relation 130946 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 130946 // <generalisation>
+	  b parent class_ref 129282 // SingleToken
+      end
+    end
+
+    class 131202 "Actg"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 131074 // <generalisation>
+	relation 131074 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 131074 // <generalisation>
+	  b parent class_ref 129282 // SingleToken
+      end
+    end
+
+    class 131330 "Sqrt"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 131202 // <generalisation>
+	relation 131202 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 131202 // <generalisation>
+	  b parent class_ref 129282 // SingleToken
+      end
+    end
+
+    class 131458 "Mul"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 131330 // <generalisation>
+	relation 131330 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 131330 // <generalisation>
+	  b parent class_ref 129410 // DoubleToken
+      end
+    end
+
+    class 131586 "Add"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 131458 // <generalisation>
+	relation 131458 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 131458 // <generalisation>
+	  b parent class_ref 129410 // DoubleToken
+      end
+    end
+
+    class 131714 "Sub"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 131586 // <generalisation>
+	relation 131586 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 131586 // <generalisation>
+	  b parent class_ref 129410 // DoubleToken
+      end
+    end
+
+    class 131842 "Div"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 131714 // <generalisation>
+	relation 131714 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 131714 // <generalisation>
+	  b parent class_ref 129410 // DoubleToken
+      end
+    end
+
+    class 131970 "Pow"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 131842 // <generalisation>
+	relation 131842 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 131842 // <generalisation>
+	  b parent class_ref 129410 // DoubleToken
+      end
+    end
+
+    class 132098 "Variable"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 131970 // <generalisation>
+	relation 131970 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 131970 // <generalisation>
+	  b parent class_ref 129154 // LeafToken
+      end
+
+      attribute 128514 "name"
+	package explicit_type "String"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 130178 "with"
+	package return_type class_ref 132098 // Variable
+	nparams 1
+	  param in name "name" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 132226 "Constant"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 132098 // <generalisation>
+	relation 132098 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 132098 // <generalisation>
+	  b parent class_ref 129154 // LeafToken
+      end
+
+      attribute 128642 "value"
+	package explicit_type "double"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 130306 "with"
+	package return_type class_ref 132226 // Constant
+	nparams 1
+	  param in name "value" explicit_type "double"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 132354 "Differentiate"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 132226 // <generalisation>
+	relation 132226 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 132226 // <generalisation>
+	  b parent class_ref 129154 // LeafToken
+      end
+
+      classrelation 132354 // f (<unidirectional association>)
+	relation 132354 --->
+	  a role_name "f" package
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 132354 // f (<unidirectional association>)
+	  b parent class_ref 128130 // MathAST
+      end
+
+      attribute 128770 "dx"
+	package explicit_type "String"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 130434 "with"
+	package return_type class_ref 132354 // Differentiate
+	nparams 2
+	  param inout name "f" type class_ref 128130 // MathAST
+	  param in name "dx" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 132482 "Lists"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 128898 "constants"
+	class_attribute package explicit_type "Class<? extends LeafToken>"
+	init_value " new ArrayList<Class<? extends LeafToken>>() {{
+        add(Pi.class);
+        add(E.class);
+    }}"
+	stereotype "List"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 129026 "functions"
+	class_attribute package explicit_type "Class<? extends SingleToken>"
+	init_value " new ArrayList<Class<? extends SingleToken>>() {{
+        add(Sin.class);
+        add(Cos.class);
+        add(Tan.class);
+        add(Ctg.class);
+        add(Lg.class);
+        add(Ln.class);
+        add(Abs.class);
+        add(Usub.class);
+        add(Asin.class);
+        add(Acos.class);
+        add(Atg.class);
+        add(Actg.class);
+        add(Sqrt.class);
+    }}"
+	stereotype "List"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    class 132610 "Token"
+      visibility package stereotype "enum"
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
+${items};
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 129154 "NAMED_FUNCTION"
+	public type class_ref 132610 // Token
+	cpp_decl ""
+	java_decl "  ${@}${name}${value},${comment}"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 129282 "CONSTANT"
+	public type class_ref 132610 // Token
+	cpp_decl ""
+	java_decl "  ${@}${name}${value},${comment}"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 129410 "OPERATOR"
+	public type class_ref 132610 // Token
+	cpp_decl ""
+	java_decl "  ${@}${name}${value},${comment}"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 129538 "UNARY_OPERATOR"
+	public type class_ref 132610 // Token
+	cpp_decl ""
+	java_decl "  ${@}${name}${value},${comment}"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 129666 "LEFT_PARENTHESIS"
+	public type class_ref 132610 // Token
+	cpp_decl ""
+	java_decl "  ${@}${name}${value},${comment}"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 129794 "RIGHT_PARENTHESIS"
+	public type class_ref 132610 // Token
+	cpp_decl ""
+	java_decl "  ${@}${name}${value},${comment}"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 129922 "NUMBER"
+	public type class_ref 132610 // Token
+	cpp_decl ""
+	java_decl "  ${@}${name}${value},${comment}"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 130050 "VARIABLE"
+	public type class_ref 132610 // Token
+	cpp_decl ""
+	java_decl "  ${@}${name}${value},${comment}"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    class 132738 "Rule"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 130178 "pattern"
+	package explicit_type "Pattern"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      classrelation 132482 // type (<unidirectional association>)
+	relation 132482 --->
+	  a role_name "type" package
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 132482 // type (<unidirectional association>)
+	  b parent class_ref 132610 // Token
+      end
+
+      attribute 130306 "args"
+	package explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 130434 "precedence"
+	package explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 130562 "isLeftAssociative"
+	package explicit_type "boolean"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 130562 "Rule"
+	package explicit_return_type ""
+	nparams 5
+	  param in name "pattern" explicit_type "String"
+	  param inout name "type" type class_ref 132610 // Token
+	  param in name "args" explicit_type "int"
+	  param in name "precedence" explicit_type "int"
+	  param inout name "isLeftAssociative" explicit_type "boolean"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}, ${t3} ${p3}, ${t4} ${p4}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 130690 "Rule"
+	package explicit_return_type ""
+	nparams 2
+	  param in name "key" explicit_type "String"
+	  param inout name "type" type class_ref 132610 // Token
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 132866 "Parser"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 132610 // rules (<unidirectional association>)
+	relation 132610 --->
+	  stereotype "ArrayList"
+	  a role_name "rules" init_value " new ArrayList<Rule>(){{
+        add(new Rule(\"[\\\\~]\", Token.OPERATOR, 1, 3, false));
+        add(new Rule(functions.stream().map(x->x.getSimpleName().toLowerCase()).collect(Collectors.joining(\"|\")),
+                     Token.NAMED_FUNCTION, 1, 4, true));
+        add(new Rule(constants.stream().map(x->x.getSimpleName().toLowerCase()).collect(Collectors.joining(\"|\")),
+                     Token.CONSTANT));
+        add(new Rule(\"[\\\\^]\", Token.OPERATOR, 2, 3, true));
+        add(new Rule(\"[*\\\\/]\", Token.OPERATOR, 2, 2, true));
+        add(new Rule(\"[+-]\", Token.OPERATOR, 2, 1, true));
+        add(new Rule(\"[(\\\\[]\", Token.LEFT_PARENTHESIS));
+        add(new Rule(\"[)\\\\]]\", Token.RIGHT_PARENTHESIS));
+        add(new Rule(\"[0-9.,]+\", Token.NUMBER));
+        add(new Rule(\"[a-zA-Z]\", Token.VARIABLE));
+    }}" class_relation package
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 132610 // rules (<unidirectional association>)
+	  b parent class_ref 132738 // Rule
+      end
+
+      operation 130818 "tokenize"
+	class_operation package explicit_return_type "ArrayList<Pair<String, Rule>>"
+	nparams 1
+	  param in name "s" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 130946 "shuntingYardAST"
+	class_operation package return_type class_ref 128130 // MathAST
+	nparams 1
+	  param inout name "tokens" explicit_type "ArrayList<Pair<String, Rule>>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 131074 "parse"
+	class_operation package return_type class_ref 128130 // MathAST
+	nparams 1
+	  param in name "expr" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@RequiresApi(api = Build.VERSION_CODES.N)
+"
+	
+	
+	
+      end
+    end
+
+    class 132994 "RepeatListener"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "A class, that can be used as a TouchListener on any view (e.g. a Button).
+It cyclically runs a clickListener, emulating keyboard-like behaviour. First
+click is fired immediately, next one after the initialInterval, and subsequent
+ones after the normalInterval.
+
+<p>Interval is scheduled after the onClick completes, so it has to run fast.
+If it runs slow, it does not generate skipped onClicks. Can be rewritten to
+achieve this.
+"
+      classrelation 132738 // <realization>
+	relation 132738 -_-|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 132738 // <realization>
+	  b parent class_ref 133122 // OnTouchListener
+      end
+
+      attribute 130690 "handler"
+	private explicit_type "Handler"
+	init_value " new Handler(Looper.getMainLooper())"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 130818 "initialInterval"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 130946 "normalInterval"
+	const_attribute private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 131074 "clickListener"
+	const_attribute private explicit_type "OnClickListener"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 131202 "touchedView"
+	private explicit_type "View"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 131330 "handlerRunnable"
+	private explicit_type "Runnable"
+	init_value " new Runnable() {
+        @Override
+        public void run() {
+            if(touchedView.isEnabled()) {
+                handler.postDelayed(this, normalInterval);
+                clickListener.onClick(touchedView);
+            } else {
+                // if the view was disabled by the clickListener, remove the callback
+                handler.removeCallbacks(handlerRunnable);
+                touchedView.setPressed(false);
+                touchedView = null;
+            }
+        }
+    }"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 131202 "RepeatListener"
+	public explicit_return_type ""
+	nparams 3
+	  param in name "initialInterval" explicit_type "int"
+	  param in name "normalInterval" explicit_type "int"
+	  param inout name "clickListener" explicit_type "OnClickListener"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@param initialInterval The interval after first click event
+@param normalInterval The interval after second and subsequent click
+      events
+@param clickListener The OnClickListener, that will be called
+      periodically
+"
+      end
+
+      operation 131330 "onTouch"
+	public explicit_return_type "boolean"
+	nparams 2
+	  param inout name "view" explicit_type "View"
+	  param inout name "motionEvent" explicit_type "MotionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    classdiagram 128002 "augcalc"
+      classdiagramsettings draw_all_relations no member_max_width 0 end
+      size D
+    end
+  end
+
+  deploymentview 128002 "augcalcandroid"
+    //deployment diagram settings
+    deploymentdiagramsettings
+     end
+    artifact 128002 "Calculator"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.HashMap;
+import java.util.Map;
+${definition}"
+      associated_elems
+	class_ref 128002 // Calculator
+      end
+    end
+
+    artifact 128130 "KeypadCollectionAdapter"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import android.os.Bundle;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
+${definition}"
+      associated_elems
+	class_ref 128258 // KeypadCollectionAdapter
+      end
+    end
+
+    artifact 128258 "KeypadCollectionFragment"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager2.widget.ViewPager2;
+${definition}"
+      associated_elems
+	class_ref 128514 // KeypadCollectionFragment
+      end
+    end
+
+    artifact 128386 "KeypadFragment"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+${definition}"
+      associated_elems
+	class_ref 128770 // KeypadFragment
+      end
+    end
+
+    artifact 128514 "MainActivity"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import android.os.Build;
+import android.util.Pair;
+import android.view.View;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.ScrollView;
+import android.widget.TextView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import androidx.viewpager2.widget.ViewPager2;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+import static tk.augmeneco.augcalcandroid.Lists.constants;
+import static tk.augmeneco.augcalcandroid.Lists.functions;
+${definition}"
+      associated_elems
+	class_ref 128898 // MainActivity
+      end
+    end
+
+    artifact 128642 "MathASTTypes"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.ArrayList;
+import java.util.List;
+${definition}"
+      associated_elems
+	class_ref 128130 // MathAST
+	class_ref 129154 // LeafToken
+	class_ref 129282 // SingleToken
+	class_ref 129410 // DoubleToken
+	class_ref 129538 // Pi
+	class_ref 129666 // E
+	class_ref 129794 // Sin
+	class_ref 129922 // Cos
+	class_ref 130050 // Tan
+	class_ref 130178 // Ctg
+	class_ref 130306 // Lg
+	class_ref 130434 // Ln
+	class_ref 130562 // Abs
+	class_ref 130690 // Usub
+	class_ref 130818 // Asin
+	class_ref 130946 // Acos
+	class_ref 131074 // Atg
+	class_ref 131202 // Actg
+	class_ref 131330 // Sqrt
+	class_ref 131458 // Mul
+	class_ref 131586 // Add
+	class_ref 131714 // Sub
+	class_ref 131842 // Div
+	class_ref 131970 // Pow
+	class_ref 132098 // Variable
+	class_ref 132226 // Constant
+	class_ref 132354 // Differentiate
+	class_ref 132482 // Lists
+      end
+    end
+
+    artifact 128770 "Parser"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import android.os.Build;
+import android.util.Pair;
+import androidx.annotation.RequiresApi;
+import java.util.*;
+import java.util.function.Consumer;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+import static tk.augmeneco.augcalcandroid.Lists.constants;
+import static tk.augmeneco.augcalcandroid.Lists.functions;
+${definition}"
+      associated_elems
+	class_ref 132610 // Token
+	class_ref 132738 // Rule
+	class_ref 132866 // Parser
+      end
+    end
+
+    artifact 128898 "RepeatListener"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import android.os.Handler;
+import android.os.Looper;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
+${definition}"
+      associated_elems
+	class_ref 132994 // RepeatListener
+      end
+    end
+  end
+end

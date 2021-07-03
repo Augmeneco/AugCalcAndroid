@@ -1,24 +1,5 @@
-package tk.augmeneco.augcalcandroid;
-
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
-// Instances of this class are fragments representing a single
-// object in our collection.
-public class KeypadFragment extends Fragment {
-    public static final String ARG_POSITION = "position";
-    public static final int fragmentNumber = 2;
-
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
+class KeypadFragment
+!!!128898.java!!!	onCreateView(inout inflater : LayoutInflater, inout container : ViewGroup, inout savedInstanceState : Bundle) : View
         Bundle args = getArguments();
         switch (args.getInt(ARG_POSITION)) {
             case 0:
@@ -28,10 +9,7 @@ public class KeypadFragment extends Fragment {
             default:
                 return inflater.inflate(R.layout.main_keypad, container, false);
         }
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+!!!129026.java!!!	onViewCreated(inout view : View, inout savedInstanceState : Bundle) : void
         Bundle args = getArguments();
         if (args.getInt(ARG_POSITION) == 0) {
             getView().findViewById(R.id.buttonRemove).setOnTouchListener(
@@ -42,6 +20,3 @@ public class KeypadFragment extends Fragment {
                         }
                     }));
         }
-    }
-}
-

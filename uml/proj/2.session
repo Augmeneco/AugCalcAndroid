@@ -1,0 +1,92 @@
+window_sizes 1920 1027 450 1465 875 104
+
+diagrams
+  active  classdiagram_ref 128002 // augcalc
+    1465 875 108 D 528 0
+end
+show_stereotypes
+marked
+  class_ref 130562 // Abs
+  class_ref 130946 // Acos
+  class_ref 131202 // Actg
+  class_ref 131586 // Add
+  class_ref 129026 // AppCompatActivity
+  class_ref 130818 // Asin
+  class_ref 131074 // Atg
+  class_ref 128002 // Calculator
+  class_ref 132226 // Constant
+  class_ref 129922 // Cos
+  class_ref 130178 // Ctg
+  class_ref 132354 // Differentiate
+  class_ref 131842 // Div
+  class_ref 129410 // DoubleToken
+  class_ref 129666 // E
+  class_ref 128642 // Fragment
+  class_ref 128386 // FragmentStateAdapter
+  class_ref 128258 // KeypadCollectionAdapter
+  class_ref 128514 // KeypadCollectionFragment
+  class_ref 128770 // KeypadFragment
+  class_ref 129154 // LeafToken
+  class_ref 130306 // Lg
+  class_ref 132482 // Lists
+  class_ref 130434 // Ln
+  class_ref 128898 // MainActivity
+  class_ref 128130 // MathAST
+  class_ref 131458 // Mul
+  class_ref 133122 // OnTouchListener
+  class_ref 132866 // Parser
+  class_ref 129538 // Pi
+  class_ref 131970 // Pow
+  class_ref 132994 // RepeatListener
+  class_ref 132738 // Rule
+  class_ref 129794 // Sin
+  class_ref 129282 // SingleToken
+  class_ref 131330 // Sqrt
+  class_ref 131714 // Sub
+  class_ref 130050 // Tan
+  class_ref 132610 // Token
+  class_ref 130690 // Usub
+  class_ref 132098 // Variable
+end
+selected classrelation_ref 129154 // a (<unidirectional association>)
+open
+  class_ref 128002 // Calculator
+  class_ref 128258 // KeypadCollectionAdapter
+  class_ref 128514 // KeypadCollectionFragment
+  class_ref 128770 // KeypadFragment
+  class_ref 128898 // MainActivity
+  class_ref 129154 // LeafToken
+  class_ref 129282 // SingleToken
+  class_ref 129410 // DoubleToken
+  class_ref 129538 // Pi
+  class_ref 129666 // E
+  class_ref 129794 // Sin
+  class_ref 129922 // Cos
+  class_ref 130050 // Tan
+  class_ref 130178 // Ctg
+  class_ref 130306 // Lg
+  class_ref 130434 // Ln
+  class_ref 130562 // Abs
+  class_ref 130690 // Usub
+  class_ref 130818 // Asin
+  class_ref 130946 // Acos
+  class_ref 131074 // Atg
+  class_ref 131202 // Actg
+  class_ref 131330 // Sqrt
+  class_ref 131458 // Mul
+  class_ref 131586 // Add
+  class_ref 131714 // Sub
+  class_ref 131842 // Div
+  class_ref 131970 // Pow
+  class_ref 132098 // Variable
+  class_ref 132226 // Constant
+  class_ref 132354 // Differentiate
+  class_ref 132482 // Lists
+  class_ref 132610 // Token
+  class_ref 132738 // Rule
+  class_ref 132866 // Parser
+  class_ref 132994 // RepeatListener
+  deploymentview_ref 128002 // augcalcandroid
+  classview_ref 128130 // unknown
+end
+end

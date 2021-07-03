@@ -1,0 +1,9 @@
+class Rule
+!!!130562.java!!!	Rule(in pattern : String, inout type : Token, in args : int, in precedence : int, inout isLeftAssociative : boolean)
+        this.pattern = Pattern.compile(pattern);
+        this.type = type;
+        this.args = args;
+        this.precedence = precedence;
+        this.isLeftAssociative = isLeftAssociative;
+!!!130690.java!!!	Rule(in key : String, inout type : Token)
+        this(key, type, 0, 0, false);

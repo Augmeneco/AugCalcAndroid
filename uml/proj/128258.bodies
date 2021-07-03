@@ -1,0 +1,13 @@
+class KeypadCollectionAdapter
+!!!128258.java!!!	KeypadCollectionAdapter(inout fragment : Fragment)
+        super(fragment);
+!!!128386.java!!!	createFragment(in position : int) : Fragment
+        // Return a NEW fragment instance in createFragment(int)
+        Fragment fragment = new KeypadFragment();
+        Bundle args = new Bundle();
+        // Our object is just an integer :-P
+        args.putInt(KeypadFragment.ARG_POSITION, position);
+        fragment.setArguments(args);
+        return fragment;
+!!!128514.java!!!	getItemCount() : int
+        return KeypadFragment.fragmentNumber;

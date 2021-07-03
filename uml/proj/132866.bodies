@@ -1,65 +1,5 @@
-package tk.augmeneco.augcalcandroid;
-
-import android.os.Build;
-import android.util.Pair;
-import androidx.annotation.RequiresApi;
-import java.util.*;
-import java.util.function.Consumer;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.stream.Collectors;
-
-import static tk.augmeneco.augcalcandroid.Lists.constants;
-import static tk.augmeneco.augcalcandroid.Lists.functions;
-
-enum Token {
-    NAMED_FUNCTION,
-    CONSTANT,
-    OPERATOR,
-    UNARY_OPERATOR,
-    LEFT_PARENTHESIS,
-    RIGHT_PARENTHESIS,
-    NUMBER,
-    VARIABLE,
-}
-
-class Rule {
-    Pattern pattern;
-    Token type;
-    int args;
-    int precedence;
-    boolean isLeftAssociative;
-
-    Rule(String pattern, Token type, int args, int precedence, boolean isLeftAssociative) {
-        this.pattern = Pattern.compile(pattern);
-        this.type = type;
-        this.args = args;
-        this.precedence = precedence;
-        this.isLeftAssociative = isLeftAssociative;
-    }
-
-    Rule(String key, Token type) {
-        this(key, type, 0, 0, false);
-    }
-}
-
-public class Parser {
-    static ArrayList<Rule> rules = new ArrayList<Rule>(){{
-        add(new Rule("[\\~]", Token.OPERATOR, 1, 3, false));
-        add(new Rule(functions.stream().map(x->x.getSimpleName().toLowerCase()).collect(Collectors.joining("|")),
-                     Token.NAMED_FUNCTION, 1, 4, true));
-        add(new Rule(constants.stream().map(x->x.getSimpleName().toLowerCase()).collect(Collectors.joining("|")),
-                     Token.CONSTANT));
-        add(new Rule("[\\^]", Token.OPERATOR, 2, 3, true));
-        add(new Rule("[*\\/]", Token.OPERATOR, 2, 2, true));
-        add(new Rule("[+-]", Token.OPERATOR, 2, 1, true));
-        add(new Rule("[(\\[]", Token.LEFT_PARENTHESIS));
-        add(new Rule("[)\\]]", Token.RIGHT_PARENTHESIS));
-        add(new Rule("[0-9.,]+", Token.NUMBER));
-        add(new Rule("[a-zA-Z]", Token.VARIABLE));
-    }};
-
-    static ArrayList<Pair<String, Rule>> tokenize(String s) {
+class Parser
+!!!130818.java!!!	tokenize(in s : String) : ArrayList<Pair<String, Rule>>
         s = s.replaceAll("(^|[\\(\\+\\-\\*/\\^])\\-", "$1~");
         s = s.replaceAll("(^|[\\(\\+\\-\\*/\\^])\\+", "$1");
 
@@ -82,9 +22,7 @@ public class Parser {
             }
         }
         return out;
-    }
-
-    static MathAST shuntingYardAST(ArrayList<Pair<String, Rule>> tokens) {
+!!!130946.java!!!	shuntingYardAST(inout tokens : ArrayList<Pair<String, Rule>>) : MathAST
         Stack<Pair<String, Rule>> op_stack = new Stack<>();
         Stack<MathAST> out = new Stack<>();
 
@@ -173,12 +111,7 @@ public class Parser {
         if (out.size() > 0)
             throw new RuntimeException("ShunYard: output stack is not empty");
         return result;
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    static MathAST parse(String expr) {
+!!!131074.java!!!	parse(in expr : String) : MathAST
         String prepare = expr.replaceAll(" ", "");
         ArrayList<Pair<String, Rule>> tokens = tokenize(prepare);
         return shuntingYardAST(tokens);
-    }
-}

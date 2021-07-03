@@ -1,0 +1,28 @@
+class RepeatListener
+!!!131202.java!!!	RepeatListener(in initialInterval : int, in normalInterval : int, inout clickListener : OnClickListener)
+        if (clickListener == null)
+            throw new IllegalArgumentException("null runnable");
+        if (initialInterval < 0 || normalInterval < 0)
+            throw new IllegalArgumentException("negative interval");
+
+        this.initialInterval = initialInterval;
+        this.normalInterval = normalInterval;
+        this.clickListener = clickListener;
+!!!131330.java!!!	onTouch(inout view : View, inout motionEvent : MotionEvent) : boolean
+        switch (motionEvent.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                handler.removeCallbacks(handlerRunnable);
+                handler.postDelayed(handlerRunnable, initialInterval);
+                touchedView = view;
+                touchedView.setPressed(true);
+                clickListener.onClick(view);
+                return true;
+            case MotionEvent.ACTION_UP:
+            case MotionEvent.ACTION_CANCEL:
+                handler.removeCallbacks(handlerRunnable);
+                touchedView.setPressed(false);
+                touchedView = null;
+                return true;
+        }
+
+        return false;

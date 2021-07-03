@@ -1,0 +1,7 @@
+class KeypadCollectionFragment
+!!!128642.java!!!	onCreateView(inout inflater : LayoutInflater, inout container : ViewGroup, inout savedInstanceState : Bundle) : View
+        return inflater.inflate(R.layout.keypad_collection, container, false);
+!!!128770.java!!!	onViewCreated(inout view : View, inout savedInstanceState : Bundle) : void
+        demoCollectionAdapter = new KeypadCollectionAdapter(this);
+        viewPager = view.findViewById(R.id.keypadPager);
+        viewPager.setAdapter(demoCollectionAdapter);
